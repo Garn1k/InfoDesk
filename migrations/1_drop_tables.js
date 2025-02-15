@@ -3,7 +3,8 @@ import knexConfig from '../knex.config';
 
 function down (pg) {
     return pg.schema
-    .dropTableIfExists('mps');
+    .dropTableIfExists('mps')
+    .dropTableIfExists('users')
 }
 
 async function init (){

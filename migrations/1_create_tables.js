@@ -6,12 +6,22 @@ function up(pg){
     return pg.schema
     .createTable('mps', (table) => {
         table.increments('id').primary();
-        table.string('name').notNullable();
+        table.string('firstname').notNullable();
         table.string('lastname').notNullable();
-        table.string('fullname').notNullable();
+        table.string('surname');
+        table.string('phonenumber').notNullable();
+        table.boolean('key');
+        table.dateTime('created_at').notNullable();
+        table.dateTime('updated_at').notNullable();
+    })
+    .createTable('users', (table) => {
+        table.increments('id').primary();
+        table.string('user').notNullable().unique();
+        table.string('pwd').notNullable();
         table.string('role').notNullable();
-        table.dateTime('created_at').notNullable().defaultTo(pg.fn.now());
-        table.dateTime('updated_at').notNullable().defaultTo(pg.fn.now());
+        table.dateTime('created_at').notNullable();
+        table.dateTime('updated_at').notNullable();
+        
     })
 }
 
