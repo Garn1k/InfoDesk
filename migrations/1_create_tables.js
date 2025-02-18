@@ -11,16 +11,16 @@ function up(pg){
         table.string('surname');
         table.string('phonenumber').notNullable();
         table.boolean('key');
-        table.dateTime('created_at').notNullable();
-        table.dateTime('updated_at').notNullable();
+        table.dateTime('created_at');
+        table.dateTime('updated_at');
     })
     .createTable('users', (table) => {
         table.increments('id').primary();
         table.string('user').notNullable().unique();
         table.string('pwd').notNullable();
         table.string('role').notNullable();
-        table.dateTime('created_at').notNullable();
-        table.dateTime('updated_at').notNullable();
+        table.dateTime('created_at');
+        table.dateTime('updated_at');
         
     })
 }
