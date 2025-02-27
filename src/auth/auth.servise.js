@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import config from "../config/variables.config";
 import { UsersModel } from "../models";
+import bCrypt from "bcryptjs";
 
 const { AUTH } = config;
 const { JWT_ACCESS_SECRET, JWT_REFRESH_SECRET } = AUTH;
@@ -40,8 +41,10 @@ export default class AuthServise {
       if (!userAdmin) {
         throw new Error("Invalid username or password");
       }
+      if(!bCrypt.compareSync(pwd, userAdmin.pwd)){
+        throw new Error("Invalid username or password");
+      }
 
-      ///////////ete usernmame jisht e stugel pwd
       ///////////JWT tokenneri generation
 
       delete userAdmin.pwd;
