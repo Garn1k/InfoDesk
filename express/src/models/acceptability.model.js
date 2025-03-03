@@ -27,6 +27,19 @@ class AcceptabilityModel extends Model{
         const user = await AcceptabilityModel.query().select("*").orderBy("id");
         return user;
     }
+
+    static async post(data){
+        await AcceptabilityModel.query().insert(data);
+        return;
+    }
+    static async put(id, data){
+        await AcceptabilityModel.query().findById(id).patch(data);
+        return;
+    }
+    static async delete(id){
+        await AcceptabilityModel.query().deleteById(id);
+        return;
+    }
 }
 
 export default AcceptabilityModel;
