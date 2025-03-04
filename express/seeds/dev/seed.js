@@ -142,6 +142,7 @@ async function seed(pg) {
     }
   ]);
 
+
   await pg('committee').insert([
     {
       name: 'Աշխատանքի և սոցիալական հարցերի',
@@ -274,6 +275,7 @@ async function seed(pg) {
       updated_at: new Date().toISOString()
     }
   ]);
+
 
   await pg('units').insert([
     {
@@ -411,6 +413,7 @@ async function seed(pg) {
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString()
 
+
     },
     {
       name: 'Մարդու իրավունքների պաշտպանության և հանրային հարցերի',
@@ -515,6 +518,7 @@ async function seed(pg) {
     },
     {
       title: 'II.Ընդհանուր դրույթներ',
+
       text: 'Հերթագրման համար քաղաքացիները կարող են այցելել Ազգային ժողով կամ զանգահարել Ազգային ժողովի պաշտոնական ինտերնետային կայքում տեղադրված տեղեկատու հեռախոսահամարներով՝ 87-88, 010-50-60-50, 011-50-60-50 (կայքը՝ http://www.parliament.am) կամ ներկայացնել գրավոր դիմում (փոստով, առձեռն, Էլեկտրոնային հարցումների միասնական հարթակով՝ https://e-request.am/hy կամ էլ-փոստի միջոցով` letter@parliament.am)՝ ընդունելության անհրաժեշտության վերաբերյալ։ Դիմումում ներառվում է դիմումատուի անունը, ազգանունը, հայրանունը, բնակության հասցեն, ստորագրությունը, բջջային կամ քաղաքային հեռախոսահամարը և ամփոփ ներկայացվում է բարձրաձայնվող հարցը։',
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString()
@@ -539,6 +543,7 @@ async function seed(pg) {
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString()
     },
+
 
     {
       title: 'II.Ընդհանուր դրույթներ',
@@ -584,6 +589,7 @@ async function seed(pg) {
       updated_at: new Date().toISOString()
     }
   ]);
+
 
   await pg('text2').insert([
     {
@@ -639,6 +645,7 @@ async function seed(pg) {
       text: 'Եվրասիական տնտեսական միության եւ տարածաշրջանի մյուս երկրների հետ կապեր, Հայաստանի Հանրապետության եւ Եվրասիական տնտեսական միության անդամ մյուս պետությունների օրենսդրության ներդաշնակեցում, միասնականացում եւ այդ ոլորտները կարգավորող օրենքներ',
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString()
+
     },
     {
       title: ' Տարածքային կառավարման, տեղական ինքնակառավարման, գյուղատնտեսության եւ շրջակա միջավայրի պահպանության հարցերի մշտական հանձնաժողով',

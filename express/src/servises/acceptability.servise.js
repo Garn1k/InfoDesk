@@ -1,7 +1,7 @@
 import { AcceptabilityModel } from '../models/';
 
 class AcceptabilityServise{
-    static async get(){
+    static get(){
         return AcceptabilityModel.get();
     }
     static async post(data){

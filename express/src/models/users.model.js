@@ -22,9 +22,8 @@ class UsersModel extends Model{
          
     }
 
-    static async findByUsername(user){
-        const user = await UsersModel.query().findOne({user});
-        return user;
+    static  findByUsername(user){
+        return UsersModel.query().findOne({user});
     }
 }
 

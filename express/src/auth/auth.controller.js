@@ -1,5 +1,5 @@
 import { ref } from 'joi';
-import AuthServise from './auth.service';
+import AuthServise from './auth.servise';
 
 
 export default class AuthController{
@@ -12,13 +12,13 @@ export default class AuthController{
             next(error);
         }
     }
-    static async refresh(req, res, next){
-        try {
-            const {refreshToken} = req.body;
-            const tokens = await AuthServise.refresh(refreshToken);
-            return res.json(tokens);
-        } catch (error) {
-            next(error);
-        }
-    }
+    // static async refresh(req, res, next){
+    //     try {
+    //         const {refreshToken} = req.body;
+    //         const tokens = await AuthServise.refresh(refreshToken);
+    //         return res.json(tokens);
+    //     } catch (error) {
+    //         next(error);
+    //     }
+    // }
 }

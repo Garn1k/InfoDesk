@@ -7,7 +7,7 @@
     "dev": "babel-watch src/bin/www.js",
     "migrate": "babel-node migrations/1_create_tables.js",
     "migrate-down": "babel-node migrations/1_drop_tables.js",
-    "reset" : "npm run migrate-down & npm run migrate & npm run seed", 
+    "reset": "npm run migrate-down & npm run migrate & npm run seed",
     "seed": "babel-node seeds/dev/seed.js",
     "lint-no-fix": "eslint src/",
     "lint": "eslint --fix src/"

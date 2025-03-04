@@ -19,14 +19,14 @@ export default class AuthServise {
       throw new Error("unouthorized");
     }
   }
-  static async refresh(token) {
-    try {
-        const user = AuthServise.validateRefreshToken(token);
-        const {accessToken, refreshToken} = AuthServise.generateTokens(payload);
-    } catch (error) {
-      throw new Error("er");
-    }
-  }
+  // static async refresh(token) {
+  //   try {
+  //       const user = AuthServise.validateRefreshToken(token);
+  //       const {accessToken, refreshToken} = AuthServise.generateTokens(payload);
+  //   } catch (error) {
+  //     throw new Error("er");
+  //   }
+  // }
   static validateRefreshToken(refreshToken) {
     try {
       return jwt.verify(refreshToken, JWT_REFRESH_SECRET);
@@ -48,13 +48,15 @@ export default class AuthServise {
       ///////////JWT tokenneri generation
 
       delete userAdmin.pwd;
+      const {accessToken, refreshToken} = AuthServise.generateTokens({...userAdmin});
 
       const payload = {
         id: userAdmin.id,
         user: userAdmin.user,
         role: userAdmin.role,
+        accessToken,
+        refreshToken
       };
-      const {accessToken, refreshToken} = AuthServise.generateTokens(payload);
       return payload;
     } catch (error) {
       console.log(error);
