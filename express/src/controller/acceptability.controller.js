@@ -22,8 +22,8 @@ class AcceptabilityController{
         try {
             const {id} = req.params;
             const data = req.body;
-            await AcceptabilityServise.put(id, data);
-            res.status(200).json({message: "Data updated"});
+            const result = await AcceptabilityServise.put(id, data);
+            res.status(200).json({...result});
         } catch (error) {
             console.error(error);
         }
@@ -31,8 +31,8 @@ class AcceptabilityController{
     static async delete(req, res, next){
         try {
             const {id} = req.params;
-            await AcceptabilityServise.delete(id);
-            res.status(200).json({message: "Data deleted"});
+            const result = await AcceptabilityServise.delete(id);
+            res.status(200).json({...result});
         } catch (error) {
             console.error(error);
         }

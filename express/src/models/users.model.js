@@ -25,6 +25,18 @@ class UsersModel extends Model{
     static  findByUsername(user){
         return UsersModel.query().findOne({user});
     }
+    static  get(){
+        return UsersModel.query().select("*").orderBy("id");
+    }
+    static  post(data){
+        return UsersModel.query().insert(data).returning('*');
+    }
+    static  put(id, data){
+        return UsersModel.query().put(data).where("id", id).returning('*');
+    }
+    static delete(id){
+        return UsersModel.query().del().where("id", id).returning('*');
+    }
 }
 
 export default UsersModel;

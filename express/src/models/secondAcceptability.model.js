@@ -25,18 +25,14 @@ class SecondAcceptabilityModel extends Model{
     static get(){
         return SecondAcceptabilityModel.query().select("*").orderBy("id");
     }
-
-    static async post(data){
-        await SecondAcceptabilityModel.query().insert(data);
-        return;
+    static post(data){
+        return SecondAcceptabilityModel.query().insert(data).returning('*');
     }
-    static async put(id, data){
-        await SecondAcceptabilityModel.query().findById(id).patch(data);
-        return;
+    static put(id, data){
+        return SecondAcceptabilityModel.query().put(data).where("id", id).returning('*');
     }
-    static async delete(id){
-        await SecondAcceptabilityModel.query().deleteById(id);
-        return;
+    static delete(id){
+        return SecondAcceptabilityModel.query().del().where("id", id).returning('*');
     }
 }
 

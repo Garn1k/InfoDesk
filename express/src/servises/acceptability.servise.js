@@ -4,13 +4,13 @@ class AcceptabilityServise{
     static get(){
         return AcceptabilityModel.get();
     }
-    static async post(data){
+    static post(data){
         return AcceptabilityModel.post(data);
     }
-    static async put(id, data){
+    static put(id, data){
         return AcceptabilityModel.put(id, data);
     }
-    static async delete(id){
+    static delete(id){
         return AcceptabilityModel.delete(id);
     }
 }

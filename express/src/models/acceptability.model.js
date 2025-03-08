@@ -23,22 +23,17 @@ class AcceptabilityModel extends Model{
          
     }
 
-    static  get(user){
+    static  get(){
         return AcceptabilityModel.query().select("*").orderBy("id");
-         
     }
-
     static  post(data){
         return AcceptabilityModel.query().insert(data).returning('*');
-        
     }
-    static async put(id, data){
-        await AcceptabilityModel.query().findById(id).patch(data);
-        return;
+    static  put(id, data){
+        return AcceptabilityModel.query().put(data).where("id", id).returning('*');
     }
-    static async delete(id){
-        await AcceptabilityModel.query().deleteById(id);
-        return;
+    static delete(id){
+        return AcceptabilityModel.query().del().where("id", id).returning('*');
     }
 }
 

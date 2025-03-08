@@ -15,7 +15,7 @@ import Api from "./api/index"; // API
 class App {
     constructor() {
         this.app = express();
-        this.app.use("/upload",express.static("upload"));
+        this.app.use("/react",express.static("react"));
 
     }
     async init(){
@@ -24,7 +24,7 @@ class App {
         this._setCors();
         this._setRequestParser();
         this._initializeApi();
-        this._setErrorHandler();
+        // this._setErrorHandler();
     }
     _setRequestLogger(){
         this.app.use(morgan("dev"));
@@ -46,9 +46,9 @@ class App {
     static _initializeStorage(){
         return PSQLStorage.init();
     }
-    _setErrorHandler(){
-        this.app.use(ErrorHandlerMiddleware.init);
-    }
+    // _setErrorHandler(){
+    //     this.app.use(ErrorHandlerMiddleware.init);
+    // }
 }
 
 export default new App();
